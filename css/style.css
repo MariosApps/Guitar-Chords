@@ -1,31 +1,44 @@
-body, html {
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    padding: 0;
     font-family: 'Mina', sans-serif;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(thomas-kelley-78865-unsplash-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(thomas-kelley-78865-unsplash-min.jpg);
+}
+
+.container {
+    min-height: 100vh;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('thomas-kelley-78865-unsplash-min.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('thomas-kelley-78865-unsplash-min.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size:cover;
     background-position: center;
-    height: 100vh;
+    background-size: cover;
 }
 
 h1 {
     color:#fff;
     font-size: 40px;
     padding-top: 15px;
+    margin-bottom: 2px solid #e67e22;
+    margin-top: 0;
 }
 
-.container {
-    max-width: 1000px;
+h1:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 200px;
     margin: 0 auto;
-    text-align: center;
+    margin-top: 0;
 }
-
 
 /*--- buttons ---*/
 button {
@@ -33,38 +46,43 @@ button {
     font-size: 20px;
     border-radius: 5px;
     -webkit-box-shadow: none;
-    background-color: rgba(255, 178, 86, 0.93);
+    background-color: #e67e22;
     color: #3b3b3b;
     cursor: pointer;
     font-weight: 700;
-    border: 1px solid #ff8b00;
+    border: 1px solid #e67e22;
     -webkit-transition: background-color 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    margin: 0 8px 5px 8px;
 }
 
 button:hover,
 button:focus,
 .selected {
-    border: 1px solid #0062ff;
-    background-color: #0062ff;
+    border: 1px solid #04a4fa;
+    background-color: #04a4fa;
     color: #000;
     outline: 0;
     color: #fff;   
 }
 
 #info {
-    position: fixed;
-    bottom: 3%;
-    left: 49%;
-    left: 49%;
+    margin: 10px auto;
 }
 
 /*--- chords images ---*/
-img {
-    width: 50%;
+.image {
+    margin: 0 auto;
+    max-width: 500px;
     height: auto;
-    padding-top: 5%;
+    padding-top: 3%;
+    display: block;
+}
+
+img {
+    width: 100%;
+    margin: 0 auto;
 }
 
 select {
@@ -75,7 +93,6 @@ select {
     outline: 0;
     background-color: #ededed;
     -webkit-box-shadow: none;
-    text-indent: 20px;
 }
 
 /*--- info window ---*/
@@ -95,7 +112,7 @@ select {
     margin: 10% auto;
     padding: 10px;
     border: none;
-    width: 30%;
+    width: 60%;
     border-radius: 20px;
     font-size: 20px;
     color: #000000;
