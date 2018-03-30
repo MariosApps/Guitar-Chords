@@ -67,9 +67,7 @@ button:focus,
     color: #fff;   
 }
 
-#info {
-    margin: 10px auto;
-}
+#info { margin: 10px auto;}
 
 /*--- chords images ---*/
 .image {
