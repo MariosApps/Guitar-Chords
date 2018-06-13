@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     $("#search-btn").click(function () {
         $('html, body').animate({
-            scrollTop: $("#title").offset().top
+            scrollTop: $("#main").offset().top
         }, 2000);
     });
 
@@ -26,14 +26,10 @@ $(document).ready(function () {
     function onSuccess(jsonReturn) {
         $('#main').empty();
         $('#title').empty();
-
-        var song = jsonReturn.objects[0].body_chords_html;
-        var title = jsonReturn.objects[0].title;
-
-        var load = "<p>Title: \"" + title + "\"</p>";
-
-        $(song).appendTo($('#main'));
-        $(load).appendTo($('#title'));
+        $(jsonReturn.objects).each(function() {
+            var load = "<ul class=\"song-list\"><li><p class=\"song-title\">Title: \"" + this.title + "\"</p></li><li><p>" + this.body_chords_html + "</p></li></ul>";
+            $(load).appendTo($('#main'));
+        });
     }
 
 

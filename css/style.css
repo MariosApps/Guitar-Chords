@@ -29,7 +29,8 @@ h1 {
     margin-top: 0;
 }
 
-h1:after {
+h1:after,
+.song-list:after {
     display: block;
     height: 2px;
     background-color: #e67e22;
@@ -119,25 +120,37 @@ input {
     font-size: 15px;
 }
 
-#main {
-    padding-top: 30px;
-    font-size: 20px;
-    padding-bottom: 20px;
+.song-title {
+    text-align: center;
+    
 }
-
-#title {
-    font-size: 25px;
-    padding-top: 15px;
-}
-
-#main,
-#title {
-    max-width: 80%;
-    color: #ffffff;
-    margin: 0 auto;
+.song {
     text-align: center;
 }
+#main {
+    max-width: 70%;
+    color: #ffffff;
+    margin: 0 auto;
+    text-align: left;
+    display: inline-block;
+    padding-top: 30px;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
 
+.song-list {
+    padding: 0;
+}
+
+.song-list li {
+    list-style: none;
+}
+
+.song-title {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+    
 /*--- info window ---*/
 
 .modal {
