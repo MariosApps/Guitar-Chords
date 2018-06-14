@@ -24,16 +24,20 @@ $(document).ready(function () {
     }
 
     function onSuccess(jsonReturn) {
-        $('#main').empty();
-        $('#title').empty();
-        $(jsonReturn.objects).each(function() {
-            var load = "<ul class=\"song-list\"><li><p class=\"song-title\">Title: \"" + this.title + "\"</p></li><li><p>" + this.body_chords_html + "</p></li></ul>";
-            $(load).appendTo($('#main'));
-        });
+        if (jsonReturn.objects_count !== 0) {
+            $('#main').empty();
+            $('#title').empty();
+            $(jsonReturn.objects).each(function () {
+                var load = "<ul class=\"song-list\"><li><p class=\"song-title\">Author: \"" + this.authors[0].name + "\"</p></li><li><p class=\"song-title\">Title: \"" + this.title + "\"</p></li><li><p>" + this.body_chords_html + "</p></li></ul>";
+                $(load).appendTo($('#main'));
+            });
+        } else {
+                $('#main').html('No match was found for the specified search criteria. Please try again.');
+        }
     }
 
 
     function onError() {
-        $('#title').html('Please type song title');
+        $('#main').html('Please type song title');
     }
 });
