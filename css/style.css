@@ -40,6 +40,11 @@ h1:after,
     margin-top: 0;
 }
 
+.chordline span{
+    display: inline-block;
+}
+
+
 /*--- buttons ---*/
 
 button {
